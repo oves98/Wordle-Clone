@@ -15295,11 +15295,16 @@ const FLIP_ANIMATION_DURATION = 500
 const DANCE_ANIMATION_DURATION = 500
 const keyboard = document.querySelector("[data-keyboard]")
 const alertContainer = document.querySelector("[data-alert-container]")
+const playContainer = document.querySelector("[data-play-container]")
+
 const guessGrid = document.querySelector("[data-guess-grid]")
-const offsetFromDate = new Date(2022, 0, 1)
-const msOffset = Date.now() - offsetFromDate
-const dayOffset = msOffset / 1000 / 60 / 60 / 24
-const targetWord = targertWords[Math.floor(dayOffset)]
+const max = targertWords.length;
+const offset = Math.floor(Math.random() * (max - 0 + 1)) + 0;
+// const offsetFromDate = new Date(2022, 0, 1)
+// const msOffset = Date.now() - offsetFromDate
+// const dayOffset = msOffset / 1000 / 60 / 60 / 24
+const targetWord = targertWords[offset]
+
 
 function startInteraction() {
     document.addEventListener("click", handleMouseClick)
@@ -15454,6 +15459,7 @@ function checkWinLose(guess, tiles) {
         showAlert("You Win", 5000)
         danceTiles(tiles)
         stopInteraction()
+        playAgain()
         return      
     }
 
@@ -15461,6 +15467,8 @@ function checkWinLose(guess, tiles) {
     if (remainingTiles.length === 0) {
         showAlert(`Correct word: ${targetWord.toUpperCase()}`, null)
         stopInteraction()
+        playAgain()
+
     }
 }
 
@@ -15476,6 +15484,19 @@ function danceTiles(tiles) {
         }, index * DANCE_ANIMATION_DURATION / 5)
 
     })
+}
+
+function playAgain() {
+  playContainer.style.display = "block"
+
+  const playBtn = document.createElement("button")
+  playBtn.textContent = "Play Again"
+  playBtn.classList.add("play")
+  playBtn.addEventListener("click", () => {
+    location.reload();
+
+  })
+  playContainer.prepend(playBtn)
 }
 
 startInteraction();
