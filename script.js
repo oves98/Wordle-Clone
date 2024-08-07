@@ -15300,15 +15300,12 @@ const playContainer = document.querySelector("[data-play-container]")
 const guessGrid = document.querySelector("[data-guess-grid]")
 const max = targertWords.length;
 const offset = Math.floor(Math.random() * (max - 0 + 1)) + 0;
-// const offsetFromDate = new Date(2022, 0, 1)
-// const msOffset = Date.now() - offsetFromDate
-// const dayOffset = msOffset / 1000 / 60 / 60 / 24
 const targetWord = targertWords[offset]
 
 
 function startInteraction() {
   document.addEventListener("click", handleMouseClick)
-  document.addEventListener("keydown", handleKeyPress)
+  document.addEventListener("keydown", handleKeyPress)    
 }
 
 function handleMouseClick(e) {

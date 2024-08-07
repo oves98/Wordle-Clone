@@ -1,5 +1,6 @@
 [
     "cigar",
+    "walee",
     "rebut",
     "sissy",
     "humph",
