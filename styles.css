@@ -250,7 +250,7 @@ body {
     .guess-grid {
         grid-template-columns: repeat(5, 7em);
         grid-template-rows: repeat(6, 7em);
-        margin-top: 1em;
+        margin-top: 2em;
     }
 
     .tile {
@@ -258,10 +258,6 @@ body {
     }
 
     .title {
-        font-size: 4em;;
-        color: white;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        display: none;
     }
   }
