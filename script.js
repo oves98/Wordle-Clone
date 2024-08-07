@@ -15461,7 +15461,7 @@ function shakeTiles(tiles) {
 function checkWinLose(guess, tiles) {
 
   if (guess === targetWord) {
-    showAlert("You Win", 5000)
+    showAlert("You Win!", 5000)
     danceTiles(tiles)
     stopInteraction()
     playAgain()
@@ -15504,4 +15504,6 @@ function playAgain() {
   playContainer.prepend(playBtn)
 }
 
-startInteraction();
+startInteraction();    
+showAlert(`Correct word: ${targetWord.toUpperCase()}`, null)
+playAgain()
