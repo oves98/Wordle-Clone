@@ -12970,5 +12970,5 @@
     "rower",
     "artsy",
     "rural",
-    "shave"
+    "shave",
   ]
