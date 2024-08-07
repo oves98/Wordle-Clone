@@ -15504,6 +15504,4 @@ function playAgain() {
   playContainer.prepend(playBtn)
 }
 
-startInteraction();    
-showAlert(`Correct word: ${targetWord.toUpperCase()}`, null)
-playAgain()
+startInteraction();
